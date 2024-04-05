@@ -16,6 +16,9 @@
 		6CDECA832BBFDB4000171A34 /* HoroscopeIosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDECA822BBFDB4000171A34 /* HoroscopeIosTests.swift */; };
 		6CDECA8D2BBFDB4000171A34 /* HoroscopeIosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDECA8C2BBFDB4000171A34 /* HoroscopeIosUITests.swift */; };
 		6CDECA8F2BBFDB4000171A34 /* HoroscopeIosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDECA8E2BBFDB4000171A34 /* HoroscopeIosUITestsLaunchTests.swift */; };
+		6CDECA9C2BBFE4E500171A34 /* HoroscopeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDECA9B2BBFE4E500171A34 /* HoroscopeProvider.swift */; };
+		6CDECA9E2BBFE7FF00171A34 /* Horoscope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDECA9D2BBFE7FF00171A34 /* Horoscope.swift */; };
+		6CDECAA02BBFF91A00171A34 /* HoroscopeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDECA9F2BBFF91A00171A34 /* HoroscopeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		6CDECA882BBFDB4000171A34 /* HoroscopeIosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoroscopeIosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CDECA8C2BBFDB4000171A34 /* HoroscopeIosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeIosUITests.swift; sourceTree = "<group>"; };
 		6CDECA8E2BBFDB4000171A34 /* HoroscopeIosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeIosUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6CDECA9B2BBFE4E500171A34 /* HoroscopeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeProvider.swift; sourceTree = "<group>"; };
+		6CDECA9D2BBFE7FF00171A34 /* Horoscope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Horoscope.swift; sourceTree = "<group>"; };
+		6CDECA9F2BBFF91A00171A34 /* HoroscopeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,9 @@
 				6CDECA742BBFDB4000171A34 /* Assets.xcassets */,
 				6CDECA762BBFDB4000171A34 /* LaunchScreen.storyboard */,
 				6CDECA792BBFDB4000171A34 /* Info.plist */,
+				6CDECA9B2BBFE4E500171A34 /* HoroscopeProvider.swift */,
+				6CDECA9D2BBFE7FF00171A34 /* Horoscope.swift */,
+				6CDECA9F2BBFF91A00171A34 /* HoroscopeTableViewCell.swift */,
 			);
 			path = HoroscopeIos;
 			sourceTree = "<group>";
@@ -261,6 +270,9 @@
 				6CDECA702BBFDB3F00171A34 /* ViewController.swift in Sources */,
 				6CDECA6C2BBFDB3F00171A34 /* AppDelegate.swift in Sources */,
 				6CDECA6E2BBFDB3F00171A34 /* SceneDelegate.swift in Sources */,
+				6CDECA9E2BBFE7FF00171A34 /* Horoscope.swift in Sources */,
+				6CDECAA02BBFF91A00171A34 /* HoroscopeTableViewCell.swift in Sources */,
+				6CDECA9C2BBFE4E500171A34 /* HoroscopeProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

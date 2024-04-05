@@ -7,6 +7,28 @@
 
 import UIKit
 
-class Horoscope: NSObject {
+class HoroscopeList {
+    var horoscopeList: Array = ["Aries",
+                                "Taurus",
+                                "Gemini",
+                                "Cancer",
+                                "Leo",
+                                "Virgo",
+                                "Libra",
+                                "Scorpio",
+                                "Sagittarius",
+                                "Capricorn",
+                                "Aquarius",
+                                "Pisces"]
+}
 
+struct HoroscopeResponse : Decodable {
+    let data: [Horoscope]
+}
+
+struct Horoscope: Decodable {
+    let id: String
+    var name: String
+    let date: String
+    let signData: String
 }
