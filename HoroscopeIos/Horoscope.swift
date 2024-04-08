@@ -28,7 +28,8 @@ struct HoroscopeResponse : Decodable {
 
 struct Horoscope: Decodable {
     let id: String
-    var name: String
+    let name: String
+    let image: String
     let date: String
     let signData: String
 }
