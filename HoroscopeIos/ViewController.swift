@@ -34,15 +34,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // Render the items on the Table View
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        // Constant variable to access the horoscope sign fields
         let item = horoscopeSigns[indexPath.row]
         
-        //let signImage = Horoscope().image
-        
+        // Constant variable creation connected to identifier
         let cell: HoroscopeTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HoroscopeTableViewCell
         
-        cell.titleLabel.text = item
-        //cell.subtitleLabel.text = item
-        cell.signImageView.image = UIImage(named: "ic-aries")
+        // Accessing the horoscope sign fields
+        cell.titleLabel.text = item.name
+        cell.subtitleLabel.text = item.date
+        cell.signImageView.image = UIImage(named: item.image)
         
         return cell
         
@@ -50,17 +51,30 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // Print horoscope sign names
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // Print signs on console
         print(horoscopeSigns[indexPath.row])
+        
+        // On return to the list, deselected the visited sign
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     // Go to individual sign details
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let indexPath = horoscopeTableView.indexPathForSelectedRow
-        
-        if (indexPath != nil) {
-            print("segue: selected row \(indexPath!.row)")
+        // If is not null the index path, continue with code
+        guard let indexPath = horoscopeTableView.indexPathForSelectedRow else {
+            print("No horoscope selected")
+            return
         }
+        
+        // Assign constant variable horoscope to the signs
+        let horoscope = horoscopeSigns[indexPath.row]
+        
+        // Assign constant variable to HoroscopeDetailViewController and segue the destination
+        let viewController: HoroscopeDetailViewController = segue.destination as! HoroscopeDetailViewController
+        
+        viewController.horoscope = horoscope
     }
 }
 
