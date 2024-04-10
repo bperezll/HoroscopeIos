@@ -36,7 +36,20 @@ class HoroscopeDetailViewController: UIViewController {
         // Date label for the detail view
         dateLabel.text = horoscope?.date
         
-        
-        //signDataTextView.text = fetchHoroscopeFromApi(horoscopeId: horoscope!.id)
+        // Load function to get text from API
+        getHoroscopeLuck()
+    }
+    
+    // Get API field text to signDataTextView
+    func getHoroscopeLuck() {
+        Task {
+            do {
+                let luck = try await fetchHoroscopeFromApi(horoscopeId: horoscope!.id)
+                    
+                signDataTextView.text = luck
+            } catch {
+                print(error)
+            }
+        }
     }
 }
