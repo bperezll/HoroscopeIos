@@ -26,6 +26,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         horoscopeTableView.rowHeight = 130
     }
     
+    // Como el OnResume de Android
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        horoscopeTableView.reloadData()
+    }
+    
     // Display the number of items on the Table View
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return horoscopeSigns.count
@@ -44,6 +51,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.titleLabel.text = item.name
         cell.subtitleLabel.text = item.date
         cell.signImageView.image = UIImage(named: item.image)
+        
+        // calling favoriteRow function from HoroscopeTableViewCell
+        cell.favoriteRow(horoscope: item)
         
         return cell
         

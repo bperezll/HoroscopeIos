@@ -21,14 +21,27 @@ class HoroscopeDetailViewController: UIViewController {
     // Text View to load sign data from the API
     @IBOutlet var signDataTextView: UITextView!
     
+    // Favorite button
+    @IBOutlet var favoriteButtonItem: UIBarButtonItem!
+    
     // Declaration of variable horoscope of type Horoscope as null
     var horoscope: Horoscope? = nil
     
+    // Boolean for the favorite button
+    var isFavorite: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Save favorite button state with UserDefaults
+        let favoriteHoroscope = UserDefaults.standard.string(forKey: "FAVORITE_HOROSCOPE") ?? ""
+        isFavorite = horoscope?.id == favoriteHoroscope
+        
+        // Load function to set favorite sign
+        setFavoriteButtonItem()
 
         // Detail View Controller title asigned to horoscope sign name
-        navigationTitle.title = horoscope?.name
+        navigationItem.title = horoscope?.name
         
         // Sign image for the detail view
         detailImageView.image = UIImage(named: horoscope!.image)
@@ -40,12 +53,31 @@ class HoroscopeDetailViewController: UIViewController {
         getHoroscopeLuck()
     }
     
+    // Set favorite sign and store with UserDefaults
+    @IBAction func setFavorite(_ sender: UIBarButtonItem) {
+        isFavorite = !isFavorite
+        if (isFavorite) {
+            UserDefaults.standard.setValue(horoscope?.id, forKey: "FAVORITE_HOROSCOPE")
+        } else {
+            UserDefaults.standard.setValue("", forKey: "FAVORITE_HOROSCOPE")
+        }
+        setFavoriteButtonItem()
+    }
+    
+    // Setting the state of the favorite button
+    func setFavoriteButtonItem() {
+        if (isFavorite) {
+            favoriteButtonItem.image = UIImage(systemName: "heart.fill")
+        } else {
+            favoriteButtonItem.image = UIImage(systemName: "heart")
+        }
+    }
+    
     // Get API field text to signDataTextView
     func getHoroscopeLuck() {
         Task {
             do {
                 let luck = try await fetchHoroscopeFromApi(horoscopeId: horoscope!.id)
-                    
                 signDataTextView.text = luck
             } catch {
                 print(error)
