@@ -30,6 +30,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        // Reload the data when view will appear
         horoscopeTableView.reloadData()
     }
     
@@ -78,13 +79,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return
         }
         
-        // Assign constant variable horoscope to the signs
+        // Assign constant variable to the selected horoscope sign
         let horoscope = horoscopeSigns[indexPath.row]
         
         // Assign constant variable to HoroscopeDetailViewController and segue the destination
         let viewController: HoroscopeDetailViewController = segue.destination as! HoroscopeDetailViewController
         
+        // Send the horoscope data to HoroscopeDetailViewController
         viewController.horoscope = horoscope
     }
 }
-

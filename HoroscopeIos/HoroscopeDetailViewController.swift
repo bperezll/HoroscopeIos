@@ -24,7 +24,7 @@ class HoroscopeDetailViewController: UIViewController {
     // Favorite button
     @IBOutlet var favoriteButtonItem: UIBarButtonItem!
     
-    // Declaration of variable horoscope of type Horoscope as null
+    // Declaration of variable horoscope to recieve data from the segue, of type Horoscope, as null
     var horoscope: Horoscope? = nil
     
     // Boolean for the favorite button
@@ -83,5 +83,14 @@ class HoroscopeDetailViewController: UIViewController {
                 print(error)
             }
         }
+    }
+    
+    // Intentar que navegue entre signos con los dos botones
+    @IBAction func prevSignButton(_ sender: UIButton) {
+        //HoroscopeList().horoscopeList[currentIndex - 1]
+    }
+    
+    @IBAction func nextSignButton(_ sender: UIButton) {
+        
     }
 }
